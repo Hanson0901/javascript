@@ -6,8 +6,8 @@
 
 1. 克隆本項目
 
-git clone <repository_url>
-cd <project_directory>
+git clone https://github.com/Hanson0901/javascript.git
+cd B1229042
 
 2. 創建虛擬環境（可選）
 
