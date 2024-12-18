@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>What the dog doing</title>
+  <meta lang="zh-TW">
+</head>
+<body>
+  <h1>Hello</h1>
+  <h2>請輸入你的基本資料
+  </h2>
+  <form action="./跳轉.html">
+  <label>姓名
+    <input type="text" name="Name" required>
+  </label>
+  <label>性別
+    <select required>
+      <option>
+        請選擇你的性別
+      </option>
+      <option>
+        男
+      </option>
+      <option>
+        女
+      </option>
+      <option>
+        非二元性別
+      </option>
+    </select>
+  </label>
+    <br>
+    <datalist id="where">
+        <option>研發部</option>
+        <option>行政部</option>
+        <option>管理部</option>
+    </datalist>
+  <label>單位
+    <input list="where" name="ID" required>
+  </label>
+  <br>
+    <label>
+      E-mail
+      <input type="text" >
+    </label>
+    <br>
+    <label>密碼
+      <input type="password" name="password" required>
+    </label>
+    <br>
+    <label >
+        連絡電話
+        <input type="text" name="phone" required>
+    </label>
+      <br>
+    <label>
+      <input type="submit" value="送出資料">
+    </label>
+  
+  </form>
+</body>
+</html>

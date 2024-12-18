@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1><a href="{{ url_for('home') }}">Chill Guy's Website</a></h1>
+        <a href="{{ url_for('logout') }}">登出</a>
+    </header>
+
+    <section id="contact-section">
+        <h1>聯繫我</h1>
+        <form class="contact-form" action="/submit_contact" method="POST">
+            <label for="username">姓名</label>
+            <input type="text" id="username" name="username" value="{{ username }}" >
+
+            <label for="email">電子郵件</label>
+            <input type="email" id="email" name="email" placeholder="輸入您的電子郵件" required>
+
+            <label for="message">訊息</label>
+            <textarea id="messageforcontact" name="message" placeholder="" required></textarea>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    // 定義多個候選 placeholder 文本
+                    const placeholders = [
+                        "How can chill guy chill you?",
+                        "What chill problem do you have?",
+                        "Chill, Chill, or Chill?",
+                        "What's on your chill mind?",
+                        "Drop me a message here!",
+                        "Let’s connect and chill together!"
+                    ];
+                
+                    // 隨機選擇其中一個作為 placeholder
+                    const randomPlaceholder = placeholders[Math.floor(Math.random() * placeholders.length)];
+                
+                    // 將隨機文本設置為 textarea 的 placeholder
+                    document.getElementById("messageforcontact").placeholder = randomPlaceholder;
+                });
+            </script>
+            <button type="submit">提交</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chill Guy. All rights reserved.</p>
+    </footer>
+</body>
+</html>

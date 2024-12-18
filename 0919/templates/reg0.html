@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>post and get page</title>
+    </head>
+    <body>
+        {%if user == "" %}
+        <form action="" method="post">
+            <p>姓名:<input type="text" name="user"></p>
+            <input type="submit" name="send"value="送出">
+
+        </form>
+        {% else %}
+        <p>Hello,{{user}}</p>
+        {% endif %}
+    </body>
+</html>

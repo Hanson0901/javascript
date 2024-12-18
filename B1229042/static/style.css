@@ -1,0 +1,321 @@
+/* 通用樣式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header 樣式 */
+header {
+    background: #333;
+    color: #fff;
+    padding: 0; /* 在左右加入一些內邊距 */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; /* 讓標題和登出按鈕分開排列 */
+    align-items: center; /* 垂直居中 */
+    transition: top 0.3s ease;
+}
+
+header h1 {
+    text-align: left; /* 如果需要可以左對齊 */
+    margin: 0;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px; /* 可以調整 padding 讓按鈕更大 */
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header a:hover {
+    background-color: #666; /* Hover 時變換背景色 */
+}
+/* Navigation 樣式 */
+nav {
+    background: #444;
+    padding: 0.5rem 0;
+    text-align: center;
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: top 0.3s ease;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* 主要內容區域 */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Intro 區域樣式 */
+#intro {
+    padding: 20px;
+    background: #f4f4f4;
+    margin-top: 120px;
+}
+
+#intro p {
+    font-size: 18px;
+
+    text-align: center;
+}
+#intro h1{
+    text-align: center;
+    font-size: 32px;
+
+}
+#intro img {
+    display: block;
+    margin: 0 auto;
+}
+#one h1{
+    font-size: 32px;
+    text-align: center;
+}
+#one .inner {
+    max-width: 800px; /* 控制內容的寬度 */
+    margin: 0 auto; /* 置中內容 */
+    padding: 20px; /* 添加內邊距 */
+    text-align: justify; /* 讓文字左右對齊 */
+    font-size: 20px;
+
+}
+
+
+
+/* 圖片區域樣式 */
+#two {
+    text-align: center;
+    padding: 20px;
+    background: #eaeaea;
+}
+
+#two img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#two h2 {
+    margin-top: 20px;
+}
+.iframe-container {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
+    width: 100%;             /* 讓容器寬度自適應 */
+    height: 100%;            /* 讓容器高度自適應 */
+    padding: 10px;           /* 為容器添加一些內邊距 */
+    box-sizing: border-box;  /* 包括內邊距在內 */
+}
+
+iframe {
+    max-width: 100%;         /* 使iframe最大寬度自適應 */
+    height: auto;            /* 高度自動調整 */
+    aspect-ratio: 16 / 9;    /* 使iframe保持16:9的比例 */
+}
+#three h1{
+    text-align: center;
+    font-size: 32px;
+}
+/* Footer 樣式 */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    transition: bottom 0.3s ease;
+}
+
+    #images .inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #images h1 {
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .gallery-it {
+        overflow: hidden;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-it img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-it:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+/* 圖片放大的樣式 */
+.modal {
+    display: none; /* 隱藏模態框 */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column; /* 垂直排列內容 */
+    justify-content: center; /* 水平置中 */
+    align-items: center; /* 垂直置中 */
+}
+
+.modal img {
+    max-width: 90%; /* 限制圖片的最大寬度 */
+    max-height: 70%; /* 限制圖片的最大高度 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    object-fit: contain; /* 保持圖片比例 */
+}
+
+.modal-caption {
+    margin-top: 15px;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    max-width: 90%; /* 確保文字不會超出圖片範圍 */
+    line-height: 1.5;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#contact-section {
+    max-width: 800px;
+    margin: 100px auto 20px; /* 調整頂部距離以避開 header */
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#contact-section h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input, 
+.contact-form textarea, 
+.contact-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.contact-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* 表單提交成功訊息 */
+.success-message {
+    text-align: center;
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* 響應式樣式 */
+@media (max-width: 768px) {
+    #contact-section {
+        padding: 15px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}

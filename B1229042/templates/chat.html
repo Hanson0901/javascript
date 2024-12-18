@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊天室</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='chat_style.css') }}">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="{{ url_for('home') }}">Chill Guy's Website</a></h1>
+        <a href="{{ url_for('logout') }}" id="logout-btn">登出</a>
+    </header>
+    <div class="chat-container">
+        <div class="header">
+            <h2>Chill Guys' 聊天室</h2>
+        </div>
+        <div class="chat-box" id="chat-box">
+            {% for msg in messages %}
+                <div class="message">
+                    <strong>{{ msg.username }}:</strong> {{ msg.message }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="input-box">
+            <input type="text" id="message" placeholder="輸入訊息">
+            <button id="send-btn">送出</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        const username = "{{ username }}";
+        const socket = io.connect(location.protocol + "//" + document.domain + ":" + location.port);
+
+        socket.emit('join', { username });
+
+        socket.on('message', (data) => {
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<div class="message"><strong>${data.username}:</strong> ${data.message}</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+
+        document.getElementById('send-btn').addEventListener('click', () => {
+            const message = document.getElementById('message').value;
+            if (message.trim()) {
+                socket.emit('send_message', { username, message });
+                document.getElementById('message').value = '';
+            }
+        });
+    </script>
+    <footer id="footer">
+        <p>&copy; 2024 Hanson. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+
+
+
+</body>
+</html>

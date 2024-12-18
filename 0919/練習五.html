@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What the dog doing</title>
+  <style>
+    .info {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello</h1>
+  <h2>請輸入你的基本資料</h2>
+  
+  <form id="regForm">
+    <label>姓名
+      <input type="text" name="Name" required>
+    </label><br><br>
+    
+    <label>性別
+      <select name="gender" required>
+        <option value="" disabled selected>請選擇你的性別</option>
+        <option value="男">男</option>
+        <option value="女">女</option>
+        <option value="非二元性別">非二元性別</option>
+      </select>
+    </label><br><br>
+
+    <datalist id="where">
+      <option value="研發部"></option>
+      <option value="行政部"></option>
+      <option value="管理部"></option>
+    </datalist>
+    <label>單位
+      <input list="where" name="ID" required>
+    </label><br><br>
+
+    <label>Email
+      <input type="email" name="email" required>
+    </label><br><br>
+
+    <label>密碼
+      <input type="password" name="password" required>
+    </label><br><br>
+
+    <label>連絡電話
+      <input type="text" name="phone" pattern="\d{10}" title="電話號碼必須是10位數字" required>
+    </label><br><br>
+
+    <input type="submit" value="送出資料">
+  </form>
+
+  <div class="info" id="userInfo"></div>
+
+  <script>
+    document.getElementById('regForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // 獲取表單資料
+      const form = event.target;
+      const name = form.Name.value;
+      const gender = form.gender.value;
+      const department = form.ID.value;
+      const email = form.email.value;
+      const phone = form.phone.value;
+      
+      // 顯示提交的資料
+      const infoDiv = document.getElementById('userInfo');
+      infoDiv.innerHTML = `
+        <p>姓名: ${name}</p>
+        <p>性別: ${gender}</p>
+        <p>單位: ${department}</p>
+        <p>Email: ${email}</p>
+        <p>連絡電話: ${phone}</p>
+      `;
+    });
+  </script>
+</body>
+</html>

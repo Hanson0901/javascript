@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <title>B1229042楊程宇</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script> 
+
+</head>
+<body>
+    <header id="header">
+        <h1><a href="{{ url_for('home') }}">Chill Guy's Website</a></h1>
+        <a href="{{ url_for('logout') }}" id="logout-btn">登出</a>
+    </header>
+    <section id="topbar">
+        <div>
+            <nav id="nav">
+                <ul>
+                    <a href="#intro">Home</a>
+                    <a href="#one">About</a>
+                    <a href="#two">Images</a>
+                    <a href="#three">youtube Video</a>
+                    <a href="{{ url_for('contact') }}">Contact Me</a>
+                    <a href="{{ url_for('chatroom') }}">Chatroom</a> <!-- 新增 Chatroom 連結 -->
+
+                    
+                </ul>
+            </nav>
+        </div>
+    </section>
+ 
+    <section id="intro">
+        <div class="inner">
+            <h1>Chill Guy</h1>
+            <img src="https://image.businessfocus.io/wp-content/uploads/2024/12/17576780.jpeg?auto=format&w=2880" alt="Chill Guy's Photo" width="300" height="300">
+            <p><strong>姓名：</strong>Chill Guy</p>
+            <p><strong>生日：</strong>2023/10/4</p>
+            <p><strong>興趣：</strong>Chill,Chill,還是Chill</p>
+            <p><strong>學校：</strong>Tiktok and Instagram University</p>
+            <p><strong>專長：</strong>Chill到爆</p>
+
+
+        </div>
+    </section>
+    <section id="one">
+        <div class="inner">
+            <h1><strong>About me</strong></h1>
+            <p>大家好，我是 Chill Guy，一隻擬人化的小狗，穿著簡約的灰色運動衫和淺色牛仔褲，腳踩紅白帆布鞋。
+            我的雙手隨意插在口袋裡，臉上掛著淡淡的微笑。我的座右銘是「I’m just a chill guy」，這句話表達
+            了我對生活的態度：無論面對什麼挑戰，我都會保持冷靜、隨遇而安。
+            我不僅僅是一個迷因，更是一種文化現象。我的存在提醒大家，在這個充滿壓力和不確定性的時代，保持冷靜
+            和幽默是多麼重要。無論生活多麼艱難，記得要「Chill」，享受當下。
+            希望大家能夠喜歡我，並在日常生活中找到屬於自己的「Chill」時刻！</p>
+            <p>「Chill guy」，是一幅數位藝術作品及網路迷因，首次由藝術家菲利普·班克斯（Phillip Banks）於2023年10月4日發布在Twitter上。這幅作品描繪了一隻擬人化的狗，穿著灰色毛衣、藍色牛仔褲和紅色運動鞋，手插口袋，露出帶有「放鬆」氛圍的微笑表情。作品發布後曾有一定熱度，但直到一年後的2024年8月30日才真正爆紅——當時有TikTok用戶將這幅作品與當時流行的其他迷因結合製作成幻燈片展示。隨後的幾天內，類似的迷因影片獲得了數千萬次觀看，甚至吸引了大型品牌的關注，包括遊戲系列《光環》（Halo）和歐洲雪碧經銷商，他們在宣傳中使用了這幅作品。</p>
+            <p>2024年11月20日，這幅作品第二次爆紅，主要是在TikTok上，引發了迷因加密貨幣「$CHILLGUY」的誕生，該幣迅速達到4.88億美元的市值，部分原因是薩爾瓦多總統納伊布·布克萊（Nayib Bukele）在Twitter上發文支持該幣。然而，由於該作品的受歡迎程度及未經授權的商業使用，班克斯決定為該作品申請版權，並對那些試圖藉此獲利的「未授權商品和垃圾幣」發出下架通知，但不包括粉絲創作或在潮流中使用它的品牌。隨著這一聲明的發布，該幣價值迅速腰斬，而班克斯也因遭到人肉搜索而將其Twitter帳號設為私人，以避免進一步的騷擾。</p>
+            <p>據一些媒體報導，該迷因之所以在網路上引起共鳴，是因為它被視為一幅輕鬆又具共鳴的作品，鼓勵人們追求自我成長、保持無壓力，並以「悠閒的態度」面對生活。</p>
+        </div>
+    </section>
+    <section id="two">
+        <div class="inner">
+            <h1>My Photo</h1>
+            <div class="gallery">
+                <div class="gallery-it">
+                    <img src="{{ url_for('static', filename='chillguyala.png') }}" alt="Image 1" data-caption="Arab Mine" >
+                    <p class="image-caption">Arab Mine</p>
+                </div>
+                <div class="gallery-it">
+                    <img src="{{ url_for('static', filename='Chillguydog.png') }}" alt="Image 2" data-caption="Dog Mine">
+                    <p class="image-caption">Dog Mine</p>
+                </div>
+                <div class="gallery-it">
+                    <img src="{{ url_for('static', filename='chillguytheif.png') }}" alt="Image 3" data-caption="Bad Mine">
+                    <p class="image-caption">Bad Mine</p>
+                </div>
+                <div class="gallery-it">
+                    <img src="{{ url_for('static', filename='chillguychrist.png') }}" alt="Image 4" data-caption="Christmas Mine">
+                    <p class="image-caption">Christmas Mine</p>
+                </div>
+                <div class="gallery-it">
+                    <img src="{{ url_for('static', filename='chillguyjojo.png') }}" alt="Image 5" data-caption="Jojo Mine">
+                    <p class="image-caption">Jojo Mine</p>
+                </div>
+                <div class="gallery-it">
+                    <img src="{{ url_for('static', filename='chillguypixel.png') }}" alt="Image 6" data-caption="Pixel Mine">
+                    <p class="image-caption">Pixel Mine</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="three">
+        <h1>
+            YouTube Video 
+        </h1>
+        <div class="iframe-container">
+
+            <br>
+
+            <iframe  width="560" height="315" src="https://www.youtube.com/embed/j2UKqr_v80o?si=4GSbdS_ePUIzB2-B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen ></iframe>        </div>
+    </section>
+
+    <div class="container">
+        
+    </div>
+    <footer id="footer">
+        <p>&copy; 2024 Hanson. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #84fab0, #8fd3f4);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .register-container {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .register-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .register-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .register-container label {
+            margin: 10px 0 5px;
+            text-align: left;
+            color: #555;
+        }
+
+        .register-container input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .register-container button {
+            background: #84fab0;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .register-container button:hover {
+            background: #62c28e;
+        }
+
+        .register-container p {
+            margin-top: 20px;
+            color: #777;
+        }
+
+        .register-container a {
+            color: #84fab0;
+            text-decoration: none;
+        }
+
+        .register-container a:hover {
+            text-decoration: underline;
+        }
+
+        /* Flash messages */
+        .flash {
+            color: green;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="register-container">
+        <h1>Be a Chill Guy</h1>
+        <form method="POST" action="/register">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">I want to Chill</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash">
+                    {% for category, message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <p>Already be an Chill Guy? <a href="/login">Login here</a></p>
+    </div>
+
+    {% if username %}
+    <script>
+        // 延遲 3 秒後自動登入並跳轉至 home 頁面
+        setTimeout(function() {
+            window.location.href = "/login";  // 跳轉到登入頁面
+        }, 3000);  // 3秒後跳轉
+    </script>
+    {% endif %}
+</body>
+</html>
